@@ -1,5 +1,8 @@
 # README
 
+# finance-app-on-ruby
+The web application "Personal Finance Manager" is developed on Ruby on Rails
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

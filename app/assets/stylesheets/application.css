@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+ :root {
+    --general-background: radial-gradient(circle at 10% 20%, rgb(235, 169, 27) 0%, #fbf5c7 65%);
+}
+html,
+body {
+    margin:0;
+    padding:0;
+    font-family:helvetica, sans-serif;
+    height: 100%;
+    font-family:  'Goldman', cursive;
+    background: rgb(228, 221, 221);
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main {
+    flex: 1 1 auto;
+}
+li a {
+    margin: 0 15px;
+}
+button a {
+    text-decoration: none;
+    color: white;
+}
+.content-block {
+    display: flex block;
+    margin: 30px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    justify-content: center;
+    background: var(--general-background);
+    border: 2px solid #fbf5c7;
+    box-shadow: 1px 10px 19px 7px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+}
+#categories {
+    width: 75%;
+}
+
+footer {
+    color: white;
+    background: grey;
+    text-align: center;
+}
+footer a {
+    color: rgb(235, 169, 27);
+    margin: 15px;
+}
+footer p a {
+    margin: 0;
+}
+footer p {
+    padding: 15px;
+}
+

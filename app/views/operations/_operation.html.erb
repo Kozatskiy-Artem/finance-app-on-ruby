@@ -1,22 +1,19 @@
 <div id="<%= dom_id operation %>">
-  <p>
-    <strong>Amount:</strong>
-    <%= operation.amount %>
-  </p>
-
-  <p>
-    <strong>Odate:</strong>
-    <%= operation.odate %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= operation.description %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= operation.category_id %>
-  </p>
+  <tr>
+    <td>
+        <input type="checkbox" name="selectors" class="checkbox" value="{{ user.id }}"/>
+    </td>
+    <td><%= operation.id %></td>
+    <td><%= operation.amount %></td>
+    <td><%= operation.odate %></td>
+    <td><%= operation.description %></td>
+    <td><%= operation.category_id %></td>
+    <td>
+      <button type="button" class="btn btn-info"><%= link_to "Edit", edit_operation_path(operation) %></button>
+    </td>
+    <td>
+      <%= button_to "Delete", operation, method: :delete, class: "btn btn-danger" %>
+    </td>
+  </tr>
 
 </div>

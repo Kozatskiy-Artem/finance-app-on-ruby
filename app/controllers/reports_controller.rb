@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
   end
 
   def report
-    if params[:commit] == "date"
+    if params[:commit] == "Generate by date"
       redirect_to({action: "report_by_dates", start_date: @start_date, end_date: @end_date})
     else
       puts params
@@ -17,11 +17,9 @@ class ReportsController < ApplicationController
     @background_colors = []
     @categories = []
     @amounts = []
+    @start = params[:start_date].to_s
+    @end = params[:end_date].to_s
   
-    # 4.times do
-    #   @background_colors.append("rgb(#{rand(255)}, #{rand(255)}, #{rand(255)})")
-    # end
-
     operations = Operation.where("odate >= :start_date AND odate <= :end_date", 
                         {start_date: params[:start_date], end_date: params[:end_date]}).order(:odate)
     categories_and_amount = {}
@@ -44,6 +42,8 @@ class ReportsController < ApplicationController
         format.html { redirect_to reports_url, notice: "Operations for the period [#{params[:start_date]} - #{params[:end_date]}] not found." }
       end
     end
+
+    @paginatable_array = Kaminari.paginate_array(@categories).page(params[:page]).per(3)
   end
 
   def report_by_dates

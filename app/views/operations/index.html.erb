@@ -1,27 +1,33 @@
-<h1>Operations</h1>
-
-<div class="content-block" id="categories">
-  <p style="color: green"><%= notice %></p>
-  <div class="table-responsive">
-    <table class="table table-hover" id="userTable">
-      <thead>
-      <tr>
-          <th scope="col">#</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Odate</th>
-          <th scope="col">Description</th>
-          <th scope="col">Category</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
-      </tr>
-      </thead>
-      <tbody>
-        <% @operations.each_with_index do |operation, index| %>
-          <%= render partial: "operation", locals: { operation: operation, index: index } %>
-        <% end %>
-      </tbody>
-    </table>
-    <%= paginate @operations %>
+<div class="col-md-8 offset-md-2">
+  <div class="content-block content-block-head">
+    <h1>Operations</h1>
   </div>
-  <button type="button" class="btn btn-primary"><%= link_to "New operation", new_operation_path %></button>
+</div>
+
+<div class="col-md-8 offset-md-2">
+  <div class="content-block">
+    <p style="color: green"><%= notice %></p>
+    <div class="table-responsive">
+      <table class="table table-hover" id="userTable">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Odate</th>
+            <th scope="col">Description</th>
+            <th scope="col">Category</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @operations.each_with_index do |operation, index| %>
+            <%= render partial: "operation", locals: { operation: operation, index: index } %>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @operations %>
+    </div>
+    <button type="button" class="btn btn-primary"><%= link_to "New operation", new_operation_path %></button>
+  </div>
 </div>

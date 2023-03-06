@@ -14,7 +14,7 @@
  *= require_self
  */
  :root {
-    --general-background: radial-gradient(circle at 10% 20%, rgb(235, 169, 27) 0%, #fbf5c7 65%);
+    --general-background: radial-gradient(circle at 10% 20%, #c0f1f4 0%, #08ebf7 65%);
 }
 html,
 body {
@@ -23,7 +23,10 @@ body {
     font-family:helvetica, sans-serif;
     height: 100%;
     font-family:  'Goldman', cursive;
-    background: rgb(228, 221, 221);
+    background: rgb(171, 228, 233);
+}
+.nav-link {
+    margin: 0 10px;
 }
 .wrapper {
     min-height: 100%;
@@ -33,9 +36,6 @@ body {
 }
 .main {
     flex: 1 1 auto;
-}
-li a {
-    margin: 0 15px;
 }
 button a {
     text-decoration: none;
@@ -47,30 +47,37 @@ label {
 input, select {
     margin: 5px 15px;
 }
+.button_report {
+    margin: 5px 0;
+}
 .content-block {
     display: flex block;
     margin: 30px;
     padding: 20px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 30px;
+    border-radius: 0 0 30px 30px;
     justify-content: center;
     background: var(--general-background);
-    border: 2px solid #fbf5c7;
+    border: 2px solid #e8e7ee;
     box-shadow: 1px 10px 19px 7px rgba(0, 0, 0, 0.2);
     justify-content: center;
 }
-#categories {
-    width: 75%;
+.content-block-head {
+    border-radius: 30px 30px 0 0;
+    text-align: center;
 }
-
+canvas {
+    font-weight: bold;
+    color: black;
+}
 footer {
     color: white;
-    background: grey;
+    background: rgb(124, 174, 235);
     text-align: center;
 }
 footer a {
-    color: rgb(235, 169, 27);
+    color: rgb(38, 136, 222);
     margin: 15px;
 }
 footer p a {
@@ -79,4 +86,3 @@ footer p a {
 footer p {
     padding: 15px;
 }
-

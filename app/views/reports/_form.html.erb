@@ -11,19 +11,15 @@
     </div>
 
     <div>
-        <%= form.label :description, style: "display: inline-flex" %>
-        <%= form.text_field :description, placeholder: "Enter description" %>
-    </div>
-
-    <div>
         <%= form.label :category_id, style: "display: inline-flex" %>
         <%= form.collection_select :category_id, Category.order(:name), :id, :name, :prompt => "Select a category" %>
     </div>
-  
+    <hr>
     <div>
-        <%= submit_tag "Report by date", class: "btn btn-primary", value: "date" %>
-        <%= submit_tag "Report by category", class: "btn btn-primary", value: "category" %>
-        <button type="reset" class="btn btn-secondary">Reset</button>
+        <%= submit_tag "Report by date", class: "btn btn-primary col-12 button_report", value: "Generate by date" %>
+        <%= submit_tag "Report by category", class: "btn btn-success col-12 button_report", value: "Generate by categories" %>
+        <hr>
+        <button type="reset" class="btn btn-secondary col-12">Clear</button>
     </div>
   
 <% end %>

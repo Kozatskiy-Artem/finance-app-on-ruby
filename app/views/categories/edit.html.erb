@@ -1,10 +1,12 @@
 <h1>Editing category</h1>
+<div class="col-md-4 offset-md-4">
+  <div class="content-block">
+    <p style="color: green"><%= notice %></p>
+    <%= render "form", category: @category %>
+    <div class="col-md-5 offset-md-7">
+      <%= link_to "Back to categories", categories_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <br>
 
-<%= render "form", category: @category %>
-
-<br>
-
-<div>
-  <%= link_to "Show this category", @category %> |
-  <%= link_to "Back to categories", categories_path %>
 </div>

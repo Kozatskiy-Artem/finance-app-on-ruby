@@ -16,8 +16,11 @@
 
     <div class="wrapper">
       <main class="main">
-        <%= yield %>
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
       </main>
+
       <%= render "shared/footer" %>
     </div>
     

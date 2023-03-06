@@ -1,13 +1,11 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Categories</h1>
 
 <div class="content-block" id="categories">
+  <p style="color: green"><%= notice %></p>
   <div class="table-responsive">
     <table class="table table-hover" id="userTable">
       <thead>
       <tr>
-          <th scope="col">Select</th>
           <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">Description</th>
@@ -16,11 +14,12 @@
       </tr>
       </thead>
       <tbody>
-        <% @categories.each do |category| %>
-          <%= render category %>
+        <% @categories.each_with_index do |category, index| %>
+          <%= render partial: "category", locals: { category: category, index: index } %>
         <% end %>
       </tbody>
     </table>
   </div>
-  <button type="button" class="btn btn-primary"><%= link_to "New category", new_category_path %></button>
+  <%= paginate @categories %>
+  <%= link_to "New category", new_category_path, class: "btn btn-primary" %>
 </div>

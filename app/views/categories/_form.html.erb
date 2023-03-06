@@ -12,16 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, style: "display: inline-flex" %>
+    <%= form.text_field :name, placeholder: "Enter name" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.label :description, style: "display: inline-flex" %>
+    <%= form.text_field :description, placeholder: "Enter description" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= submit_tag "Submit", class: "btn btn-primary" %>
+    <button type="reset" class="btn btn-secondary">Reset</button>
   </div>
+
 <% end %>

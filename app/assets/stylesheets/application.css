@@ -41,6 +41,12 @@ button a {
     text-decoration: none;
     color: white;
 }
+label {
+    min-width: 100px;
+}
+input, select {
+    margin: 5px 15px;
+}
 .content-block {
     display: flex block;
     margin: 30px;

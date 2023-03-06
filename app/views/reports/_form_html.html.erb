@@ -1,0 +1,22 @@
+<form action="reports/report" method="GET">
+    <div>
+        <label style="display: inline-flex" for="Data start">Data start</label>
+        <input type="datetime-local" name="date_start" id="date_start" />
+    </div>
+
+    <div>
+        <label style="display: inline-flex" for="Data end">Data end</label>
+        <input type="datetime-local" name="date_end" id="date_end" />
+    </div>
+
+    <div>
+        <label style="display: inline-flex" for="Description">Description</label>
+        <input type="text" name="description" id="description" />
+    </div>
+
+    <div>
+        <%= submit_tag "Submit", class: "btn btn-primary", name: "date" %>
+        <%= submit_tag "Submit", class: "btn btn-primary", name: "category" %>
+        <input type="submit" value="Register">
+    </div> 
+</form>

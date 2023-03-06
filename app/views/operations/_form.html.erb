@@ -12,26 +12,27 @@
   <% end %>
 
   <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+    <%= form.label :amount, style: "display: inline-flex" %>
+    <%= form.text_field :amount, placeholder: "Enter sum" %>
   </div>
 
   <div>
-    <%= form.label :odate, style: "display: block" %>
-    <%= form.datetime_field :odate %>
+    <%= form.label :odate, style: "display: inline-flex" %>
+    <%= form.date_field :odate %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+    <%= form.label :description, style: "display: inline-flex" %>
+    <%= form.text_field :description, placeholder: "Enter description" %>
   </div>
 
   <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.collection_select :category_id, Category.order(:name), :id, :name %>
+    <%= form.label :category_id, style: "display: inline-flex" %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, :prompt => "Select a category" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= submit_tag "Submit", class: "btn btn-primary" %>
+    <button type="reset" class="btn btn-secondary">Reset</button>
   </div>
 <% end %>

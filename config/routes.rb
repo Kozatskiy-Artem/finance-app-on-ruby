@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'reports/index'
   get 'reports/report_by_category'
   get 'reports/report_by_dates'
+  get 'reports/report'
 
   resources :operations
   resources :categories

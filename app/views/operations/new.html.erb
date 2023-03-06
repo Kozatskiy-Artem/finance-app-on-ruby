@@ -1,9 +1,13 @@
 <h1>New operation</h1>
 
-<%= render "form", operation: @operation %>
+<div class="col-md-4 offset-md-4">
+  <div class="content-block">
+    <p style="color: green"><%= notice %></p>
+    <%= render "form", operation: @operation %>
+    <div class="col-md-5 offset-md-7">
+      <%= link_to "Back to operations", operations_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <br>
 
-<br>
-
-<div>
-  <%= link_to "Back to operations", operations_path %>
 </div>

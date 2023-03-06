@@ -1,19 +1,15 @@
 <div id="<%= dom_id operation %>">
   <tr>
-    <td>
-        <input type="checkbox" name="selectors" class="checkbox" value="{{ user.id }}"/>
-    </td>
-    <td><%= operation.id %></td>
+    <td><%= index + 1 %></td>
     <td><%= operation.amount %></td>
     <td><%= operation.odate %></td>
     <td><%= operation.description %></td>
-    <td><%= operation.category_id %></td>
+    <td><%= operation.category.name %></td>
     <td>
-      <button type="button" class="btn btn-info"><%= link_to "Edit", edit_operation_path(operation) %></button>
+      <%= link_to "Edit", edit_operation_path(operation), class: "btn btn-info" %>
     </td>
     <td>
       <%= button_to "Delete", operation, method: :delete, class: "btn btn-danger" %>
     </td>
   </tr>
-
 </div>

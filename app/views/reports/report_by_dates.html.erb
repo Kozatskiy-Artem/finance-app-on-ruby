@@ -1,2 +1,32 @@
 <h1>Reports#report_by_dates</h1>
 <p>Find me in app/views/reports/report_by_dates.html.erb</p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="col-md-8 offset-md-2">
+  <div class="content-block">
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+  <br>
+</div>
+
+<script>
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const data = {
+    labels: <%= raw @dates %>,
+    datasets: [{
+      label: 'Operations for the period: ' + '<%= @start %>' + ' - ' + '<%= @end %>',
+      data: <%= @amount %>,
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1
+    }]
+  };
+  const config = {
+    type: 'line',
+    data: data,
+  };
+
+  const myChart = new Chart(ctx, config)
+</script>

@@ -1,10 +1,10 @@
 <div id="<%= dom_id operation %>">
   <tr>
     <td><%= index + 1 %></td>
+    <td><%= operation.category.name %></td>
     <td><%= operation.amount %></td>
     <td><%= operation.odate %></td>
     <td><%= operation.description %></td>
-    <td><%= operation.category.name %></td>
     <td>
       <%= link_to "Edit", edit_operation_path(operation), class: "btn btn-info" %>
     </td>

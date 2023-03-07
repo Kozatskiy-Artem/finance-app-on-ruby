@@ -1,12 +1,12 @@
 <%= form_with url: "reports/report", method: :get do |form| %>
 
     <div>
-        <%= form.label "Data start", style: "display: inline-flex" %>
+        <%= form.label "Date start", style: "display: inline-flex" %>
         <%= form.date_field :date_start %>
     </div>
   
     <div>
-        <%= form.label "Data end", style: "display: inline-flex" %>
+        <%= form.label "Date end", style: "display: inline-flex" %>
         <%= form.date_field :date_end %>
     </div>
 

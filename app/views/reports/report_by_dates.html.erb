@@ -2,6 +2,11 @@
   <div class="content-block content-block-head">
     <h1>Report by dates</h1>
     <p> Operations for the period: <%= @start %> - <%= @end %>
+    <% if @category == nil %>
+      <p> All categories </p>
+    <% else %>
+      <p> Category of operations: <%= @category %> </p>
+    <% end %>
   </div>
 </div>
 

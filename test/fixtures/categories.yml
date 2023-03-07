@@ -1,9 +1,41 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyString
+  name: Сategory_1
+  description: MyString_1
 
 two:
-  name: MyString
-  description: MyString
+  name: Category_2
+  description: MyString_2
+
+three:
+  name: Category_3
+  description: MyString_3
+  
+four:
+  name: Category_4
+  description: MyString_4
+
+five:
+  name: Category_5
+  description: MyString_5
+
+six:
+  name: Category_6
+  description: MyString_6
+
+seven:
+  name: Category_7
+  description: MyString_7
+
+eight:
+  name: Category_8
+  description: MyString_8
+
+nine:
+  name: Category_9
+  description: MyString_9
+
+ten:
+  name: Category_10
+  description: MyString_10

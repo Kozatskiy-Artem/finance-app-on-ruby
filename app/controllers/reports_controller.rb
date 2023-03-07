@@ -6,10 +6,8 @@ class ReportsController < ApplicationController
 
   def report
     if params[:commit] == "Generate by date"
-      redirect_to({action: "report_by_dates", start_date: @start_date, end_date: @end_date})
-    else
-      puts params
-      redirect_to({action: "report_by_category", start_date: @start_date, end_date: @end_date})
+      redirect_to({action: "report_by_dates", start_date: @start_date, end_date: @end_date, category_id: params[:category_id]})
+    else redirect_to({action: "report_by_category", start_date: @start_date, end_date: @end_date})
     end
   end
 
@@ -51,9 +49,16 @@ class ReportsController < ApplicationController
     @amount = []
     @start = params[:start_date].to_s
     @end = params[:end_date].to_s
-    operations = Operation.where("odate >= :start_date AND odate <= :end_date", 
-                        {start_date: params[:start_date], end_date: params[:end_date]}).order(:odate)
-    
+
+    unless params[:category_id] == ''
+      operations = Operation.where("odate >= :start_date AND odate <= :end_date AND category_id = :category_id", 
+                          {start_date: params[:start_date], end_date: params[:end_date], category_id: params[:category_id]}).order(:odate)
+      @category = operations.first.category.name
+      # @category = Category.find(params[:category_id]).name
+    else
+      operations = Operation.where("odate >= :start_date AND odate <= :end_date", 
+                          {start_date: params[:start_date], end_date: params[:end_date]}).order(:odate)
+    end
     prev_date = ''
     operations.each do |oper|
       if prev_date == oper.odate.to_s

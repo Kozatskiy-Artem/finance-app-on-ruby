@@ -1,1 +1,1 @@
-release: bundle exec rake db:migrate
+release: rails db:migrate

@@ -1,0 +1,58 @@
+<div class="col-md-6 offset-md-3">
+  <div class="content-block content-block-head">
+    <h1>Report by category</h1>
+    <p> Operations for the period: <%= @start %> - <%= @end %>
+    <div>
+      <table class="table table-hover" id="userTable">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Categories</th>
+            <th scope="col">Amounts</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @paginatable_array.each_with_index do |category, index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= category %></td>
+              <td><%= @amounts[index] %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @paginatable_array %>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 offset-md-3">
+  <div class="content-block">
+    <div>
+      <canvas id="myPieChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myPieChart').getContext('2d');
+  const data = {
+    labels: <%= raw @categories %>,
+    datasets: [{
+        label: 'Period: ' + '<%= @start %>' + ' - ' + '<%= @end %>',
+        data: <%= @amounts %>,
+        backgroundColor: <%= raw @background_colors %>,
+        hoverOffset: 4
+    }]
+    };
+    const config = {
+        type: 'pie',
+        data: data,
+    };
+
+  const myChart = new Chart(ctx, config)
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

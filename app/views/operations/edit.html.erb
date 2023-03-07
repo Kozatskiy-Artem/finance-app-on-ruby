@@ -1,0 +1,16 @@
+<div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+  <div class="content-block content-block-head">
+    <h1>Editing operation</h1>
+  </div>
+</div>
+
+<div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+  <div class="content-block">
+    <p style="color: green"><%= notice %></p>
+    <%= render "form", operation: @operation %>
+    <div class="col-5 offset-7">
+      <%= link_to "Back to operations", operations_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <br>
+</div>

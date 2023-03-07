@@ -1,0 +1,36 @@
+<%= form_with(model: operation) do |form| %>
+  <% if operation.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% operation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :amount, style: "display: inline-flex" %>
+    <%= form.text_field :amount, placeholder: "Enter sum" %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: inline-flex" %>
+    <%= form.date_field :odate %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: inline-flex" %>
+    <%= form.text_field :description, placeholder: "Enter description" %>
+  </div>
+
+  <div>
+    <%= form.label :category_id, style: "display: inline-flex" %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, :prompt => "Select a category" %>
+  </div>
+
+  <div>
+    <%= submit_tag "Save", class: "btn btn-primary" %>
+    <button type="reset" class="btn btn-secondary">Clear</button>
+  </div>
+<% end %>

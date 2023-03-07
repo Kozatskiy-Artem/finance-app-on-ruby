@@ -1,0 +1,26 @@
+<%= form_with url: "reports/report", method: :get do |form| %>
+
+    <div>
+        <%= form.label "Date start", style: "display: inline-flex" %>
+        <%= form.date_field :date_start %>
+    </div>
+  
+    <div>
+        <%= form.label "Date end", style: "display: inline-flex" %>
+        <%= form.date_field :date_end %>
+    </div>
+
+    <div>
+        <%= form.label :category_id, style: "display: inline-flex" %>
+        <%= form.collection_select :category_id, Category.order(:name), :id, :name, :prompt => "Select a category" %>
+    </div>
+    <hr>
+    <div>
+        <%= submit_tag "Report by date", class: "btn btn-primary col-12 button_report", value: "Generate by date" %>
+        <%= submit_tag "Report by category", class: "btn btn-success col-12 button_report", value: "Generate by categories" %>
+        <hr>
+        <button type="reset" class="btn btn-secondary col-12">Clear</button>
+    </div>
+  
+<% end %>
+  

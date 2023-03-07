@@ -1,0 +1,61 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 500
+  odate: 2023-03-01
+  description: MyString
+  category: seven
+
+two:
+  amount: 150
+  odate: 2023-03-03
+  description: MyString
+  category: two
+
+three:
+  amount: 50
+  odate: 2023-03-05
+  description: MyString
+  category: six
+
+four:
+  amount: 1000
+  odate: 2023-03-02
+  description: MyString
+  category: five
+
+five:
+  amount: 625
+  odate: 2023-03-11
+  description: MyString
+  category: seven
+
+six:
+  amount: 800
+  odate: 2023-03-25
+  description: MyString
+  category: three
+
+seven:
+  amount: 200
+  odate: 2023-03-01
+  description: MyString
+  category: three
+
+eight:
+  amount: 100
+  odate: 2023-03-15
+  description: MyString
+  category: ten
+
+nine:
+  amount: 737
+  odate: 2023-03-27
+  description: MyString
+  category: ten
+
+ten:
+  amount: 999
+  odate: 2023-03-30
+  description: MyString
+  category: two

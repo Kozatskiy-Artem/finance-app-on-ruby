@@ -1,0 +1,27 @@
+<%= form_with(model: category) do |form| %>
+  <% if category.errors.any? %>
+    <div style="color: red">
+      <ul>
+        <% category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: inline-flex" %>
+    <%= form.text_field :name, placeholder: "Enter name" %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: inline-flex" %>
+    <%= form.text_field :description, placeholder: "Enter description" %>
+  </div>
+  
+  <div>
+    <%= submit_tag "Save", class: "btn btn-primary" %>
+    <button type="reset" class="btn btn-secondary">Clear</button>
+  </div>
+
+<% end %>

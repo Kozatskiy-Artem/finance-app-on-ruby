@@ -4,10 +4,10 @@
     <td><%= category.name %></td>
     <td><%= category.description %></td>
     <td>
-      <%= link_to "Edit", edit_category_path(category), class: "btn btn-info" %>
-    </td>
-    <td>
-      <%= button_to "Delete", category, method: :delete, class: "btn btn-danger" %>
+      <div class="settings">
+        <%= link_to "", edit_category_path(category), class: "btn btn-info bi bi-pencil-square settings-buttons" %>
+        <%= button_to "", category, method: :delete, class: "btn btn-danger bi bi-trash3 settings-buttons" %>
+      </div>
     </td>
   </tr>
 </div>

@@ -1,4 +1,4 @@
-<div class="col-md-6 offset-md-3">
+<div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3">
   <div class="content-block content-block-head">
     <h1>Report by category</h1>
     <p> Operations for the period: <%= @start %> - <%= @end %>
@@ -12,21 +12,20 @@
         </tr>
         </thead>
         <tbody>
-          <% @paginatable_array.each_with_index do |category, index| %>
+          <% @categories_and_amount.each_with_index do |(key, value), index| %>
             <tr>
               <td><%= index + 1 %></td>
-              <td><%= category %></td>
-              <td><%= @amounts[index] %></td>
+              <td><%= key %></td>
+              <td><%= value %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      <%= paginate @paginatable_array %>
     </div>
   </div>
 </div>
 
-<div class="col-md-6 offset-md-3">
+<div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3">
   <div class="content-block">
     <div>
       <canvas id="myPieChart"></canvas>
@@ -39,10 +38,10 @@
 <script>
   const ctx = document.getElementById('myPieChart').getContext('2d');
   const data = {
-    labels: <%= raw @categories %>,
+    labels: <%= raw @categories_and_amount.keys %>,
     datasets: [{
         label: 'Period: ' + '<%= @start %>' + ' - ' + '<%= @end %>',
-        data: <%= @amounts %>,
+        data: <%= @categories_and_amount.values %>,
         backgroundColor: <%= raw @background_colors %>,
         hoverOffset: 4
     }]

@@ -2,17 +2,17 @@
 
     <div>
         <%= form.label "Date start", style: "display: inline-flex" %>
-        <%= form.date_field :date_start %>
+        <%= form.date_field :date_start, placeholder: "Select a start date" %>
     </div>
   
     <div>
         <%= form.label "Date end", style: "display: inline-flex" %>
-        <%= form.date_field :date_end %>
+        <%= form.date_field :date_end, placeholder: "Select a end date" %>
     </div>
 
     <div>
         <%= form.label :category_id, style: "display: inline-flex" %>
-        <%= form.collection_select :category_id, Category.order(:name), :id, :name, :prompt => "Select a category" %>
+        <%= form.collection_select :category_id, Category.order(:name).pluck(:id, :name), :first, :second, :prompt => "Select a category" %>
     </div>
     <hr>
     <div>

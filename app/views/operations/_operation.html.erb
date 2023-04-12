@@ -6,10 +6,10 @@
     <td><%= operation.odate %></td>
     <td><%= operation.description %></td>
     <td>
-      <%= link_to "Edit", edit_operation_path(operation), class: "btn btn-info" %>
-    </td>
-    <td>
-      <%= button_to "Delete", operation, method: :delete, class: "btn btn-danger" %>
+      <div class="settings">
+        <%= link_to "", edit_operation_path(operation), class: "btn btn-info bi bi-pencil-square settings-buttons" %>
+        <%= button_to "", operation, method: :delete, class: "btn btn-danger bi bi-trash3 settings-buttons" %>
+      </div>
     </td>
   </tr>
 </div>

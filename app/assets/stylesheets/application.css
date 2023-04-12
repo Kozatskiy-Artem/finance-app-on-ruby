@@ -26,31 +26,6 @@ body {
     font-family:  'Goldman', cursive;
     background: rgb(171, 228, 233);
 }
-@media screen and (max-width: 300px){
-    body {
-        font-size: 0.6em;
-    }
-}
-@media screen and (min-width: 301px) and (max-width: 767px){
-    body {
-        font-size: 0.9em;
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 991px){
-    body {
-        font-size: 1.5em;
-    }
-}
-@media screen and (min-width: 992px) and (max-width: 1199px){
-    body {
-        font-size: 1.5em;
-    }
-}
-@media screen and (min-width: 1200px){
-    body {
-        font-size: 1.5em;
-    }
-}
 .nav-link {
     margin: 0 10px;
 }
@@ -68,10 +43,10 @@ button a {
     color: white;
 }
 label {
-    min-width: 120px;
+    min-width: 115px;
 }
 input, select {
-    margin: 5px 15px;
+    margin: 5px 0;
 }
 .button_report {
     margin: 5px 0;
@@ -122,4 +97,41 @@ footer p a {
 }
 footer p {
     padding: 15px;
+}
+@media screen and (max-width: 300px){
+    body {
+        font-size: 0.6em;
+    }
+    label {
+        min-width: 50px;
+    }
+}
+@media screen and (min-width: 301px) and (max-width: 767px){
+    body {
+        font-size: 0.9em;
+    }
+    label {
+        min-width: 80px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991px){
+    body {
+        font-size: 1.5em;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1199px){
+    body {
+        font-size: 1.5em;
+    }
+    label {
+        min-width: 120px;
+    }
+}
+@media screen and (min-width: 1200px){
+    body {
+        font-size: 1.5em;
+    }
+    label {
+        min-width: 120px;
+    }
 }

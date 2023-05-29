@@ -1,7 +1,8 @@
 # README
 
-# finance-app-on-ruby
-The web application "Personal Finance Manager" is developed on Ruby on Rails
+# finance-weather-blog-app-on-ruby
+The web application is developed on Ruby on Rails
+The web application that will combine a personal financial manager, a weather forecast application and become a blog for people who like to go hiking and mountain climbing
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
